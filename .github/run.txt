@@ -1,5 +1,0 @@
-python manage.py migrate
-python manage.py runserver
-
-- Templaces/home.html
-- image/freya.jpeg
