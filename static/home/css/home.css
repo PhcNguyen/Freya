@@ -1,0 +1,72 @@
+/* CSS cơ bản */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Định vị cố định cho thanh thông tin liên hệ và mạng xã hội */
+#contact, #follow-us {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Màu nền cho thanh thông tin */
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* Đệm trên và dưới */
+  z-index: 1000; /* Đảm bảo thanh thông tin nằm trên cùng */
+}
+
+#contact h2, #follow-us a {
+  display: inline-block;
+  margin: 0 10px; /* Khoảng cách giữa các thông tin và liên kết */
+  color: black; /* Màu chữ */
+  text-decoration: none; /* Không gạch chân cho liên kết */
+}
+
+#follow-us a:hover {
+  text-decoration: underline; /* Gạch chân khi di chuột qua liên kết */
+}
+
+
+a img {
+  float: left; /* Căn left icon */
+  margin-left: 5px; /* Khoảng cách giữa icon và văn bản */
+  width: 1em; /* Chiều rộng của icon bằng với kích thước chữ mặc định */
+  height: 1em; /* Chiều cao của icon bằng với kích thước chữ mặc định */
+}
