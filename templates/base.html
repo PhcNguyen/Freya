@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freya official website | FREYA</title>
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'base/image/freya.png' %}">
+    <script src="{% static 'base/js/home.js' %}"></script>
+</head>
+<body onselectstart="return false" ondragstart="return false" oncontextmenu="return false">
+    <header class="header-base">
+        <nav class="navbar-base">
+            <div class="logo-base">
+                <img src="{% static 'base/image/freya.png' %}" alt="Brand Logo">
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="menu-label">
+                <img src="{% static 'base/image/menu-icon.png' %}" alt="Menu Icon" class="menu-icon">
+            </label>
+            <div class="nav-menu">
+              <a href="/">Home</a>
+              <a href="#">Collection</a>
+              <a href="#">About</a>
+              <a href="contact">Contact</a>
+            </div>            
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

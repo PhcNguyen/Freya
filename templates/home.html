@@ -1,43 +1,22 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
 {% load static %}
-<html lang="vi">
+
+{% block content %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freya official website | FREYA</title>
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
-    <link rel="shortcut icon" href="{% static 'home/image/freya.png' %}">
-    <script src="{% static 'home/js/home.js' %}"></script>
 </head>
-<body onselectstart="return false" ondragstart="return false" oncontextmenu="return false">
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="{% static 'home/image/freya.png' %}" alt="Brand Logo">
-            </div>
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            <label for="menu-toggle" class="menu-label">
-                <img src="{% static 'home/image/menu-icon.png' %}" alt="Menu Icon" class="menu-icon">
-            </label>
-            <div class="nav-menu">
-              <a href="#">Home</a>
-              <a href="#">Collection</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-              <!-- Thêm các mục khác nếu cần -->
-            </div>            
-        </nav>
-    </header>
-    <img src="{% static 'home/image/anhbia.png' %}" class="centered-image">
-    <footer>
-        <ul class="social-links">
-            <li>
-                <a href="https://www.instagram.com/freya.phan" target="_blank">
-                    <img src="{% static 'home/image/instagram.png' %}"> Instagram
-                </a>
-            </li>
-            <!-- Thêm các mạng xã hội khác nếu cần -->
-        </ul>
-    </footer> 
-</body>
-</html>
+
+<img src="{% static 'home/image/cover-image.png' %}" class="centered-image">
+<footer>
+    <ul class="social-links">
+        <li>
+            <a href="https://www.instagram.com/freya.phan" target="_blank">
+                <img src="{% static 'base/image/instagram.png' %}"> Instagram
+            </a>
+        </li>
+    </ul>
+</footer>
+{% endblock %}

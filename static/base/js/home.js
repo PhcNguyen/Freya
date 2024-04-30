@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.body.classList.add('loading');
+
+window.addEventListener('load', function() {
+    document.body.classList.remove('loading');
+    document.body.classList.add('loaded');
+});
+
 
 
 
