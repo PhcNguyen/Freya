@@ -1,12 +1,17 @@
 /* CSS cơ bản */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Playfair Display', serif; /* Phông chữ cho tiêu đề */
   color: #333;
   background-color: #fff;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; 
 }
 
+/* Cập nhật header */
 .header {
   width: 100%;
   padding: 20px 0;
@@ -14,6 +19,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Cập nhật navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -22,51 +28,76 @@ body {
   max-width: 1200px;
 }
 
+/* Cập nhật logo */
 .logo img {
-  max-width: 100px;
+  max-width: 150px; /* Tăng kích thước logo */
   height: auto;
 }
 
+/* Cập nhật menu */
 .menu {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px; /* Tăng khoảng cách giữa các menu item */
 }
 
 .menu-item a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
 }
 
-/* Định vị cố định cho thanh thông tin liên hệ và mạng xã hội */
-#contact, #follow-us {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff; /* Màu nền cho thanh thông tin */
-  color: white;
-  text-align: center;
-  padding: 10px 0; /* Đệm trên và dưới */
-  z-index: 1000; /* Đảm bảo thanh thông tin nằm trên cùng */
+.menu-item a:hover {
+  color: #d4af37; /* Màu khi hover */
 }
 
-#contact h2, #follow-us a {
-  display: inline-block;
-  margin: 0 10px; /* Khoảng cách giữa các thông tin và liên kết */
-  color: black; /* Màu chữ */
-  text-decoration: none; /* Không gạch chân cho liên kết */
+/* Đặt nền và màu sắc cho footer */
+footer {
+  background-color: #fff; /* Màu nền đen */
+  color: #000; /* Màu chữ trắng */
+  font-family: 'Arial', sans-serif; /* Phông chữ */
+  width: 100%; /* Chiều rộng toàn màn hình */
+  padding: 20px 0; /* Đệm trên và dưới */
+  position: fixed; /* Cố định ở dưới cùng */
+  bottom: 0; /* Vị trí dưới cùng của trang */
+  left: 0; /* Căn trái */
+  z-index: 1000; /* Đảm bảo footer nằm trên cùng */
 }
 
-#follow-us a:hover {
-  text-decoration: underline; /* Gạch chân khi di chuột qua liên kết */
+/* Thiết kế cho liên kết mạng xã hội */
+.social-links {
+  text-align: center; /* Căn giữa nội dung */
+  list-style: none; /* Bỏ dấu đầu dòng */
+  padding: 0; /* Bỏ đệm */
 }
 
-
-a img {
-  float: left; /* Căn left icon */
-  margin-left: 5px; /* Khoảng cách giữa icon và văn bản */
-  width: 1em; /* Chiều rộng của icon bằng với kích thước chữ mặc định */
-  height: 1em; /* Chiều cao của icon bằng với kích thước chữ mặc định */
+.social-links li {
+  display: inline-block; /* Hiển thị các liên kết trên cùng một dòng */
+  margin: 0 10px; /* Khoảng cách giữa các liên kết */
 }
+
+.social-links a {
+  color: #000000;
+  text-decoration: none; /* Bỏ gạch chân */
+  font-size: 16px; /* Kích thước chữ */
+}
+
+.social-links img {
+  width: 24px; /* Kích thước icon */
+  height: 24px; /* Kích thước icon */
+  vertical-align: middle; /* Căn giữa icon với chữ */
+}
+
+/* Thêm thông tin liên hệ */
+.contact-info {
+  text-align: center; /* Căn giữa nội dung */
+  margin-top: 10px; /* Khoảng cách từ mạng xã hội đến thông tin liên hệ */
+}
+
+.contact-info span {
+  display: block; /* Hiển thị từng thông tin trên một dòng riêng */
+  color: #000000;
+  font-size: 14px; /* Kích thước chữ nhỏ hơn */
+}
+

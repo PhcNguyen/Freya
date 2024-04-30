@@ -1,9 +1,24 @@
-function toggleSocialLinks() {
-    var links = document.getElementById('social-links');
-    if (links.style.display === 'block') {
-      links.style.display = 'none';
-    } else {
-      links.style.display = 'block';
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey || event.metaKey) {
+    switch (event.key) {
+      case 'c': // Ctrl+C hoặc Command+C
+      case 'x': // Ctrl+X hoặc Command+X
+      case 'v': // Ctrl+V hoặc Command+V
+        event.preventDefault();
+        break;
     }
-}
+  }
+});
+// Ngăn chặn sự kiện chuột phải trên toàn bộ trang
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+}, false);
+
+document.querySelectorAll('.social-links a[href*="instagram.com"]').forEach(function(link) {
+  link.addEventListener('mouseover', function(e) {
+    e.preventDefault();
+  });
+});
+
+
   

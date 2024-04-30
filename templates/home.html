@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{% static 'home/image/freya.png' %}">
     <script src="{% static 'home/js/home.js' %}"></script>
 </head>
-<body>
+<body onselectstart="return false" ondragstart="return false" oncontextmenu="return false">
         <header class="header">
                 <nav class="navbar">
                   <div class="logo">
@@ -22,26 +22,15 @@
                   </ul>
                 </nav>
         </header>
-
-        <!-- Thanh thông tin liên hệ và mạng xã hội ở dưới cùng -->
-        <section id="contact">
-          <h2>Email: freyaphan@gmail.com</h2>
-          <h2>Hotline: +84908505103</h2>
-        </section>
-        <section id="follow-us">
-          <div id="social-links" class="social-links">
-            <a href="https://www.instagram.com/freya.phan" target="_blank">
-              <img src="{% static 'home/image/icon-ins.png' %}">
-              Instagram
-            </a>
-            
-          </div>
-        </section>
-
-        
-
         <footer>
-               
-        </footer>
+          <ul class="social-links">
+            <li>
+              <a href="https://www.instagram.com/freya.phan" target="_blank">
+                <img src="{% static 'home/image/icon-ins.png' %}"> Instagram
+              </a>
+            </li>
+            <!-- Thêm các mạng xã hội khác nếu cần -->
+          </ul>
+        </footer> 
 </body>
 </html>
