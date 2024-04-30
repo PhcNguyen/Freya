@@ -117,13 +117,21 @@ body {
   color: #555; /* Màu chữ khi hover */
 }
 
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Thay đổi chiều rộng theo ý muốn */
+  height: 100%; /* Đặt chiều cao tự động để giữ nguyên tỷ lệ */
+}
+
 /* Footer */
 footer {
   background-color: #fff;
   color: #000;
   font-family: 'Arial', sans-serif;
   width: 100%;
-  padding: 20px 0;
+  padding: 2px 0;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -152,16 +160,4 @@ footer {
   width: 24px;
   height: 24px;
   vertical-align: middle;
-}
-
-/* Contact info */
-.contact-info {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.contact-info span {
-  display: block;
-  color: #000000;
-  font-size: 14px;
 }
