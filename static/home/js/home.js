@@ -9,6 +9,7 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
+
 // Ngăn chặn sự kiện chuột phải trên toàn bộ trang
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
@@ -20,5 +21,19 @@ document.querySelectorAll('.social-links a[href*="instagram.com"]').forEach(func
   });
 });
 
+// JavaScript để xử lý sự kiện click cho menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+  var menuToggle = document.getElementById('menu-toggle');
+  var menu = document.querySelector('.nav-menu');
 
-  
+  menuToggle.addEventListener('click', function () {
+      menu.classList.toggle('active');
+  });
+});
+
+
+
+
+
+
+

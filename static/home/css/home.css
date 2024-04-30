@@ -1,17 +1,17 @@
 /* CSS cơ bản */
 body {
-  font-family: 'Playfair Display', serif; /* Phông chữ cho tiêu đề */
+  font-family: 'Playfair Display', serif;
   color: #333;
   background-color: #fff;
   margin: 0;
   padding: 0;
-  -webkit-user-select: none; /* Chrome, Safari, Opera */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none; 
 }
 
-/* Cập nhật header */
+/* Header */
 .header {
   width: 100%;
   padding: 20px 0;
@@ -19,85 +19,149 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Cập nhật navbar */
+/* Logo */
+.logo img {
+  max-width: 150px;
+  height: auto;
+  margin-left: 10px; /* Di chuyển banner sang phải */
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  max-width: 1200px;
+  padding: 0 20px;
 }
 
-/* Cập nhật logo */
-.logo img {
-  max-width: 150px; /* Tăng kích thước logo */
-  height: auto;
+/* Menu toggle - chỉ hiển thị trên thiết bị di động */
+.menu-checkbox {
+  display: none; /* Ẩn checkbox */
 }
 
-/* Cập nhật menu */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 30px; /* Tăng khoảng cách giữa các menu item */
+.menu-label {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-.menu-item a {
+.menu-label .menu-icon {
+  display: block; /* Hiển thị icon ba gạch */
+  cursor: pointer;
+  width: 30px; /* Điều chỉnh kích thước phù hợp */
+}
+
+/* Định dạng chung cho icon menu và icon close */
+.menu-label .menu-icon {
+  display: block;
+  cursor: pointer;
+  width: 30px; /* Kích thước ban đầu của icon menu */
+  height: 30px; /* Kích thước ban đầu của icon menu */
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+/* Khi checkbox được chọn, thay đổi hình ảnh và kích thước cho icon */
+.menu-checkbox:checked + .menu-label .menu-icon {
+  content: url("/static/home/image/close-icon.png"); /* Đường dẫn đến icon close */
+  width: 20px; /* Kích thước nhỏ hơn cho icon close */
+  height: 20px; /* Kích thước nhỏ hơn cho icon close */
+  top: 15px;
+  right: 20px;
+}
+
+/* Đảm bảo rằng vị trí của icon không thay đổi khi checkbox được chọn */
+.menu-checkbox:checked + .menu-label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Định dạng cho menu */
+.nav-menu {
+  display: none; /* Ẩn menu mặc định */
+  position: fixed; /* Vị trí cố định */
+  top: 83px; /* Điều chỉnh dựa trên chiều cao của header */
+  right: 0; /* Từ cạnh phải trang */
+  width: 250px; /* Độ rộng của menu */
+  background-color: #fff; /* Màu nền trắng cho menu */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho menu */
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển đổi mượt mà */
+  transform: translateX(100%); /* Bắt đầu từ bên ngoài màn hình */
+  overflow-y: auto; /* Thêm thanh cuộn nếu nội dung dài */
+  max-height: 80vh; /* Chiều cao tối đa là 80% của chiều cao viewport */
+}
+
+.nav-menu.active {
+  display: block; /* Hiển thị menu khi có class 'active' */
+  transform: translateX(0); /* Trượt vào khi có class 'active' */
+}
+
+/* Định dạng cho các mục trong menu */
+.nav-menu a {
+  display: block; /* Mỗi mục trên một dòng riêng biệt */
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
-}
-
-.menu-item a:hover {
-  color: #d4af37; /* Màu khi hover */
-}
-
-/* Đặt nền và màu sắc cho footer */
-footer {
-  background-color: #fff; /* Màu nền đen */
-  color: #000; /* Màu chữ trắng */
+  color: #333; /* Màu chữ */
+  padding: 15px 20px; /* Khoảng cách xung quanh mỗi mục */
+  border-bottom: 1px solid #ddd; /* Đường kẻ ngăn cách giữa các mục */
   font-family: 'Arial', sans-serif; /* Phông chữ */
-  width: 100%; /* Chiều rộng toàn màn hình */
-  padding: 20px 0; /* Đệm trên và dưới */
-  position: fixed; /* Cố định ở dưới cùng */
-  bottom: 0; /* Vị trí dưới cùng của trang */
-  left: 0; /* Căn trái */
-  z-index: 1000; /* Đảm bảo footer nằm trên cùng */
+  font-size: 16px; /* Kích thước chữ */
+  transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
 }
 
-/* Thiết kế cho liên kết mạng xã hội */
+/* Thay đổi màu nền và màu chữ khi hover */
+.nav-menu a:hover {
+  background-color: #f8f8f8; /* Màu nền khi hover */
+  color: #555; /* Màu chữ khi hover */
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  color: #000;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Social links */
 .social-links {
-  text-align: center; /* Căn giữa nội dung */
-  list-style: none; /* Bỏ dấu đầu dòng */
-  padding: 0; /* Bỏ đệm */
+  text-align: center;
+  list-style: none;
+  padding: 0;
 }
 
 .social-links li {
-  display: inline-block; /* Hiển thị các liên kết trên cùng một dòng */
-  margin: 0 10px; /* Khoảng cách giữa các liên kết */
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .social-links a {
   color: #000000;
-  text-decoration: none; /* Bỏ gạch chân */
-  font-size: 16px; /* Kích thước chữ */
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .social-links img {
-  width: 24px; /* Kích thước icon */
-  height: 24px; /* Kích thước icon */
-  vertical-align: middle; /* Căn giữa icon với chữ */
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
 
-/* Thêm thông tin liên hệ */
+/* Contact info */
 .contact-info {
-  text-align: center; /* Căn giữa nội dung */
-  margin-top: 10px; /* Khoảng cách từ mạng xã hội đến thông tin liên hệ */
+  text-align: center;
+  margin-top: 10px;
 }
 
 .contact-info span {
-  display: block; /* Hiển thị từng thông tin trên một dòng riêng */
+  display: block;
   color: #000000;
-  font-size: 14px; /* Kích thước chữ nhỏ hơn */
+  font-size: 14px;
 }
-

@@ -4,33 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freya offcial website | FREYA</title>
+    <title>Freya official website | FREYA</title>
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
     <link rel="shortcut icon" href="{% static 'home/image/freya.png' %}">
     <script src="{% static 'home/js/home.js' %}"></script>
 </head>
 <body onselectstart="return false" ondragstart="return false" oncontextmenu="return false">
-        <header class="header">
-                <nav class="navbar">
-                  <div class="logo">
-                    <img src="{% static 'home/image/banner.jpg' %}" alt="Brand Logo">
-                  </div>
-                  <ul class="menu">
-                    <li class="menu-item"><a href="#">Home</a></li>
-                    <li class="menu-item"><a href="#">Collection</a></li>
-                    <li class="menu-item"><a href="#">About</a></li>
-                  </ul>
-                </nav>
-        </header>
-        <footer>
-          <ul class="social-links">
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'home/image/banner.jpg' %}" alt="Brand Logo">
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="menu-label">
+                <img src="{% static 'home/image/menu-icon.png' %}" alt="Menu Icon" class="menu-icon">
+            </label>
+            <div class="nav-menu">
+              <a href="#">Home</a>
+              <a href="#">Collection</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+              <!-- Thêm các mục khác nếu cần -->
+            </div>            
+        </nav>
+    </header>
+    <footer>
+        <ul class="social-links">
             <li>
-              <a href="https://www.instagram.com/freya.phan" target="_blank">
-                <img src="{% static 'home/image/icon-ins.png' %}"> Instagram
-              </a>
+                <a href="https://www.instagram.com/freya.phan" target="_blank">
+                    <img src="{% static 'home/image/instagram.png' %}"> Instagram
+                </a>
             </li>
             <!-- Thêm các mạng xã hội khác nếu cần -->
-          </ul>
-        </footer> 
+        </ul>
+    </footer> 
 </body>
 </html>
