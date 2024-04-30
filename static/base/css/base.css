@@ -68,7 +68,7 @@ html, body {
   
   /* Khi checkbox được chọn, thay đổi hình ảnh và kích thước cho icon */
   .menu-checkbox:checked + .menu-label .menu-icon {
-    content: url(/static/home/image/close-icon.png); /* Đường dẫn đến icon close */
+    content: url(/static/base/image/close-icon.png); /* Đường dẫn đến icon close */
     width: 20px; /* Kích thước nhỏ hơn cho icon close */
     height: 20px; /* Kích thước nhỏ hơn cho icon close */
     top: 15px;
