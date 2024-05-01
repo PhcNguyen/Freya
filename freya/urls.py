@@ -7,5 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.home),
-    path('contact', views.contact),
+    path('contact/', views.contact),
+    path('contact/success/', views.success),
 ]

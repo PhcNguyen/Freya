@@ -6,7 +6,7 @@
 
 {% block content %}
 <head>
-    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
 </head>
 <style>
     .logo-base img {
@@ -22,9 +22,9 @@
     .logo-base:hover img { 
         transform: scale(1);
     }
-    
+
 </style>
-<img src="{% static 'home/image/cover-img.png' %}" class="centered-image">
+<img src="{% static 'home/cover-img.png' %}" class="centered-image">
 <footer>
     <ul class="social-links">
         <li>
@@ -34,5 +34,5 @@
         </li>
     </ul>
 </footer>
-<script src="{% static 'home/js/home.js' %}"></script>
+<script src="{% static 'home/home.js' %}"></script>
 {% endblock %}

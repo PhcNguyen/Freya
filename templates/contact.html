@@ -55,29 +55,26 @@
                                     </div>
                                 </div>
                                 <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    {% csrf_token %}
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                    placeholder="Name">
+                                                {{ form.name }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12"> 
+                                            <div class="form-group">
+                                                {{ form.email }}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Email">
+                                                {{ form.subject }}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="subject" id="subject"
-                                                    placeholder="Subject">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <textarea name="message" class="form-control" id="message" cols="30"
-                                                    rows="4" placeholder="Create a message here"></textarea>
+                                                {{ form.message }}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -87,7 +84,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </form>                                
                                 <div class="w-100 social-media mt-5">
                                     <h3>Follow us here</h3>
                                     <p>
