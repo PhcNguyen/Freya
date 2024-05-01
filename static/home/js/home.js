@@ -6,5 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.location.pathname === '/') {
         event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
       }
-    });
   });
+});
+
+
+document.querySelectorAll('.social-links a[href*="instagram.com"]').forEach(function(link) {
+  link.addEventListener('mouseover', function(e) {
+    e.preventDefault();
+  });
+});
