@@ -10,13 +10,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
-
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'api'
-EMAIL_HOST_PASSWORD = '575949836b8e40d2042a8ee8dd692588'
-EMAIL_PORT = '587'
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

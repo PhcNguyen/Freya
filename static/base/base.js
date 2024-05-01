@@ -17,13 +17,6 @@ document.addEventListener('contextmenu', function(e) {
 }, false);
 
 
-document.querySelectorAll('.social-links a[href*="instagram.com"]').forEach(function(link) {
-  link.addEventListener('mouseover', function(e) {
-    e.preventDefault();
-  });
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
   var menuToggle = document.getElementById('menu-toggle');
   var menu = document.querySelector('.nav-menu');

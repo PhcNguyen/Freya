@@ -8,6 +8,7 @@
 
 <head>
 	<link rel="stylesheet" href="{% static 'contact/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'contact/css/bootstrap.min.css' %}">
 </head>
 <section class="ftco-section">
     <div class="container">
@@ -57,22 +58,38 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                {{ form.name.label_tag }}
                                                 {{ form.name }}
+                                                {% if form.name.errors %}
+                                                    <span class="text-danger">{{ form.name.errors }}</span>
+                                                {% endif %}
                                             </div>
                                         </div>
                                         <div class="col-md-12"> 
                                             <div class="form-group">
+                                                {{ form.email.label_tag }}
                                                 {{ form.email }}
+                                                {% if form.email.errors %}
+                                                    <span class="text-danger">{{ form.email.errors }}</span>
+                                                {% endif %}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                {{ form.subject.label_tag }}
                                                 {{ form.subject }}
+                                                {% if form.subject.errors %}
+                                                    <span class="text-danger">{{ form.subject.errors }}</span>
+                                                {% endif %}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                {{ form.message.label_tag }}
                                                 {{ form.message }}
+                                                {% if form.message.errors %}
+                                                    <span class="text-danger">{{ form.message.errors }}</span>
+                                                {% endif %}
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -82,7 +99,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>                                
+                                </form>                                                     
                                 <div class="w-100 social-media mt-5">
                                     <p>
                                         <a href="https://www.facebook.com/100082835163967" target="_blank">
