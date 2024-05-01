@@ -10,10 +10,12 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+
 // Ngăn chặn sự kiện chuột phải trên toàn bộ trang
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 }, false);
+
 
 document.querySelectorAll('.social-links a[href*="instagram.com"]').forEach(function(link) {
   link.addEventListener('mouseover', function(e) {
@@ -21,7 +23,7 @@ document.querySelectorAll('.social-links a[href*="instagram.com"]').forEach(func
   });
 });
 
-// JavaScript để xử lý sự kiện click cho menu toggle
+
 document.addEventListener('DOMContentLoaded', function () {
   var menuToggle = document.getElementById('menu-toggle');
   var menu = document.querySelector('.nav-menu');
@@ -29,18 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
   menuToggle.addEventListener('click', function () {
       menu.classList.toggle('active');
   });
+
+  document.addEventListener('click', function(event) {
+      if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+          menu.classList.remove('active');
+          menuToggle.checked = false;
+      }
+  });
+
+  window.addEventListener('scroll', function() {
+      if (menu.classList.contains('active')) {
+          menu.classList.remove('active');
+          menuToggle.checked = false;
+      }
+  });
 });
-
-document.body.classList.add('loading');
-
-window.addEventListener('load', function() {
-    document.body.classList.remove('loading');
-    document.body.classList.add('loaded');
-});
-
-
-
-
-
-
-

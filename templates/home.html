@@ -8,7 +8,13 @@
 <head>
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 </head>
-
+<style>
+    .logo-base img {
+        cursor: default;
+        max-width: 150px;
+        margin-left: 10px;
+    }
+</style>
 <img src="{% static 'home/image/cover-img.png' %}" class="centered-image">
 <footer>
     <ul class="social-links">
@@ -19,4 +25,5 @@
         </li>
     </ul>
 </footer>
+<script src="{% static 'home/js/home.js' %}"></script>
 {% endblock %}

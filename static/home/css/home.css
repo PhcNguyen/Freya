@@ -36,6 +36,7 @@ footer {
 
 .centered-image {
   display: block;
+  z-index: 1000;
   margin-left: auto;
   margin-right: auto;
   width: 100%;

@@ -7,13 +7,14 @@
     <title>Freya official website | FREYA</title>
     <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
     <link rel="shortcut icon" href="{% static 'base/image/freya.png' %}">
-    <script src="{% static 'base/js/home.js' %}"></script>
 </head>
 <body onselectstart="return false" ondragstart="return false" oncontextmenu="return false">
     <header class="header-base">
         <nav class="navbar-base">
             <div class="logo-base">
-                <img src="{% static 'base/image/freya.png' %}" alt="Brand Logo">
+                <a href="/">
+                  <img src="{% static 'base/image/freya.png' %}" alt="Brand Logo">
+                </a>
             </div>
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle" class="menu-label">
@@ -29,5 +30,6 @@
     </header>
     {% block content %}
     {% endblock content %}
+    <script src="{% static 'base/js/base.js' %}"></script>
 </body>
 </html>
