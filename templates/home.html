@@ -5,34 +5,50 @@
 {% load static %}
 
 {% block content %}
-<head>
-    <link rel="stylesheet" href="{% static 'home/home.css' %}">
-</head>
-<style>
-    .logo-base img {
-        cursor: default;
-        max-width: 150px;
-        margin-left: 10px;
-    }
+<section class="videobg" id="video1">
+    <video src="{% static 'base/videos/v1.mp4' %}" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
+    <h2>Freya Phan Deep Time</h2>
+    <button>Discover the Collections</button>
+</section>
 
-    .logo-base img {
-        max-width: 150px;
-    }
+<section class="services">
+    <h2>Services</h2>
+    <div class="grid">
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-image" src="{% static 'base/image/service.jpeg' %}" alt="service img 1">
+                <div class="card-content">
+                    <h1>How can we help you?</h1>
+                    <p>Wherever you are, Freya Phan Client Advisors will be delighted to assist you.</p>
+                    <button class="card-btn">Contact Us</button>
+                </div>
+            </div>
+        </div>
 
-    .logo-base:hover img { 
-        transform: scale(1);
-    }
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-image" src="assets/Service Pages/Service_image2.jpg" alt="service img 2">
+                <div class="card-content">
+                    <h1>Art of Gifting</h1>
+                    <p>Choose the perfect gift from our specially curated selection of products.</p>
+                    <button class="card-btn">Gifts for Her</button>
+                    <button class="card-btn">Gifts for Him</button>
+                </div>
+            </div>
+        </div>
 
-</style>
-<img src="{% static 'home/cover-img.png' %}" class="centered-image">
-<footer>
-    <ul class="social-links">
-        <li>
-            <a href="https://www.instagram.com/freya.phan" target="_blank">
-                <img src="{% static 'base/image/instagram.png' %}"> Instagram
-            </a>
-        </li>
-    </ul>
-</footer>
-<script src="{% static 'home/home.js' %}"></script>
+        <div class="grid-item">
+            <div class="card">
+                <img class="card-image" src="assets/Service Pages/Service_image3.jpg" alt="service img 3">
+                <div class="card-content">
+                    <h1>Personalization</h1>
+                    <p>Freya Phan's personalization offer spans a wide range of services.</p>
+                    <button class="card-btn">Explore our Collections</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 {% endblock %}
