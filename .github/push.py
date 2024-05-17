@@ -13,23 +13,19 @@ class Col:
     def start(color: str) -> str:
         return f"\033[38;2;{color}m"
     
-    Red: str = start('255;0;0')
-    
-    Blue: str = start('28;121;255')
-    Cyan: str = start('0;255;255')
-    Pink: str = start('255;192;203')
-
-    Black: str = start('0;0;0')
-    White: str = start('255;255;255')
-    Green: str = start('0;255;0')
-
-    Purple: str = start('255;0;255')
-    Yellow: str = start('255;255;0')
-    Orange: str = start('255;165;0')
+    Red    = start('255;0;0'    )
+    Blue   = start('28;121;255' )
+    Cyan   = start('0;255;255'  )
+    Pink   = start('255;192;203')
+    Black  = start('0;0;0'      )
+    White  = start('255;255;255')
+    Green  = start('0;255;0'    )
+    Purple = start('255;0;255'  )
+    Yellow = start('255;255;0'  )
+    Orange = start('255;165;0'  )
 
 
 class Terminal:
-    
     @staticmethod
     def Clear() -> None:
         return os.system("cls" if os.name == 'nt' else "clear")
