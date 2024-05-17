@@ -1,149 +1,112 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'base/main.css' %}">
-    <link rel="script" href="{% static 'base/main.js' %}">
-
-    <link rel="preconnect" href="{% static 'fonts/Jost.ttf' %}">
-    <link rel="preconnect" href="{% static 'fonts/Jost_light.ttf' %}" crossorigin>
-    <link href="{% static 'fonts/Saveur_sans.otf' %}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 
-'apple-touch-icon-retina.png')}">
     <title>FREYA PHAN - Official International Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 </head>
-<body onselectstart="return false" ondragstart="return false" oncontextmenu="return false">
+<body>
     <nav id="navbar" class="navbar">
-        <ul>
+        <ul class="nav-list">
             <li><i class="fa-solid fa-bars" id="menu_icon"></i></li>
-            <li><a href="#" class="nav-hid">Menu</a></li>
-            <li><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></li>
-            <li><a href="#" class="nav-hid">Search</a></li>
+            <li><a class="nav-link">Menu</a></li>
         </ul>
-        <a href="#" class="brand">FREYA PHAN</a>
-        <!--
-        <ul>
-            <li><a href="#">Wishlist</a></li>
-            <li><a href="#">My FP</a></li>
-        </ul>
-        -->
+        <a href="/" class="brand">FREYA PHAN</a>
     </nav>
+    <div id="dropdown_menu" class="dropdown-menu hidden">
+        <ul>
+            <div class="menu-header">
+                <span class="close-btn" id="close_btn">&times;</span> <!-- Nút X để thoát -->
+            </div>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
     {% block content %}
     {% endblock content %}
-    <section class="links">
-        <hr class="hr">
-        <div class="container">
-            <div class="column">
-              <div class="cell cell-head">HELP</div>
-              <div class="cell"><a href="#" class="links">You can <span>call</span> or <span>email us</span>.</a></div>
-              <div class="cell"><a href="#" class="links">FAQ's</a></div>
-              <div class="cell"><a href="#" class="links">Product Care</a></div>
-              <div class="cell"><a href="#" class="links">Stores</a></div>
-            </div>
-            <div class="column">
-              <div class="cell cell-head">SERVICES</div>
-              <div class="cell"><a href="#" class="links">Repairs</a></div>
-              <div class="cell"><a href="#" class="links">Personalization</a></div>
-              <div class="cell"><a href="#" class="links">Art of Gifting</a></div>
-              <div class="cell"><a href="#" class="links">Download our Apps</a></div>
-            </div>
-            <div class="column">
-              <div class="cell cell-head">ABOUT FREYA PHAN</div>
-              <div class="cell"><a href="#" class="links">Fashion Shows</a></div>
-              <div class="cell"><a href="#" class="links">Art & Culture</a></div>
-              <div class="cell"><a href="#" class="links">La Maison</a></div>
-              <div class="cell"><a href="#" class="links">Sustainability</a></div>
-              <div class="cell"><a href="#" class="links">Latest News</a></div>
-              <div class="cell"><a href="#" class="links">Careers</a></div>
-              <div class="cell"><a href="#" class="links">Foundation Freya Phan</a></div>
-            </div>
-            <div class="column">
-              <div class="cell cell-head">CONNECT</div>
-              <div class="cell"><a href="#" class="links"><span>Sign up</span> fo first access to latest collections, campaigns and videos.</a></div>
-              <div class="cell"><a href="#" class="links">Follow Us</a></div>
-            </div>
-    </section>
+    <script>
+        var lastScrollTop = 0;
+        var navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = "-100px";
+            } else {
+                navbar.style.top = "0";
+                if (scrollTop === 0) {
+                    navbar.classList.remove("scrolled"); 
+                } else {
+                    navbar.classList.add("scrolled"); 
+                }
+            }
+            lastScrollTop = scrollTop;
+        });
 
-    <hr class="hr">
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuIcon = document.getElementById("menu_icon");
+            var dropdownMenu = document.getElementById("dropdown_menu");
+            var closeBtn = document.getElementById("close_btn");
 
-    <footer class="footer">
-        
-        <a href="#" class='language'><i class="fa-solid fa-globe globe-icon" ></i><span>ENGLISH (INTL)</span></a>
-        <ul>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Legal & privacy</a></li>
-            <li><a href="#">Cookies</a></li>
-        </ul>
-    </footer>
+            menuIcon.addEventListener("click", function() {
+                dropdownMenu.classList.toggle("hidden");
+            });
 
-    <div class="accordian-container">
-        <hr class="hr-hid">
-        <button class="accordion">Help</button>
-            <div class="panel">
+            closeBtn.addEventListener("click", function() {
+                dropdownMenu.classList.add("hidden");
+            });
+        });
 
-                <a href="#">You can <span>call</span> or <span>email us</span>.</a>
-                <a href="#">FAQ's</a>
-                <a href="#">Product Care</a>
-                <a href="#">Stores</a>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                var panel = this.nextElementSibling;
+                var isActive = this.classList.contains("active");
+                for (var j = 0; j < acc.length; j++) {
+                    var otherPanel = acc[j].nextElementSibling;
+                    if (otherPanel !== panel) {
+                        otherPanel.style.maxHeight = null;
+                        acc[j].classList.remove("active");
+                    }
+                }
+                if (isActive) {
+                    this.classList.remove("active");
+                    panel.style.maxHeight = null;
+                } else {
+                    this.classList.add("active");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        const overlay = document.getElementById("overlay");
+        const dropdownMenu = document.getElementById("dropdown_menu");
+        const closeButton = document.getElementById("close_btn");
 
-            </div>
-        
-        <hr class="hr-hid">
+        // Ngăn chặn sự kiện cuộn mặc định
+        function preventDefaultScroll(event) {
+            event.preventDefault();
+        }
 
-        <button class="accordion">Services</button>
-            <div class="panel">
-                <a href="#">Repairs</a>
-                <a href="#">Personalization</a>
-                <a href="#">Art of Gifting</a>
-                <a href="#">Download pur Apps</a>
-            </div>
-
-        <hr class="hr-hid">
-        
-        <button class="accordion">About Freya Phan</button>
-            <div class="panel">
-                <a href="#">Fashion Shows</a>
-                <a href="#">Art & Culture</a>
-                <a href="#">La Maison</a>
-                <a href="#">Sustainability</a>
-                <a href="#">Latest News</a>
-                <a href="#">Careers</a>
-                <a href="#">Foundation of Freya Phan</a>
-            </div>
-
-        <hr class="hr-hid">
-        
-        <button class="accordion">Connect</button>
-            <div class="panel">
-                <a href="#"><span>Sign up</span> fo first access to latest collections, campaigns and videos.</a>
-                
-
-                <div class="socialmedia">
-
-                    <i class="fa-brands fa-instagram social insta"></i>
-
-                   <i class="fa-brands fa-facebook-f social"></i>
-
-                </div>
-            </div>
-            <hr class="hr-hid">
-    </div>
-    
-
-    <footer class="mobile-footer">
-
-        <ul>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Legal & privacy</a></li>
-            <li><a href="#">Cookies</a></li>
-        </ul>
-
-        <div class="contain"><a href="#" class='mobile-language'><i class="fa-solid fa-globe globe-icon" ></i><span>ENGLISH (INTL)</span></a></div>
-    </footer>
+        // Mở dropdown menu khi click vào nút Menu
+        document.querySelector(".nav-link").addEventListener("click", function(event) {
+            event.preventDefault(); // Ngăn chặn mặc định hành vi khi click vào nút
+            overlay.classList.remove("hidden");
+            dropdownMenu.classList.remove("hidden");
+            dropdownMenu.classList.add("active");
+            window.addEventListener('scroll', preventDefaultScroll, { passive: false });
+        });
+    </script>
 </body>
+</html>
