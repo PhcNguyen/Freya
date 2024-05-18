@@ -2,7 +2,7 @@ import asyncio
 import logging
 import types
 
-from asgiref.sync import async_to_sync, iscoroutinefunction, sync_to_async
+from django.asgiref.sync import async_to_sync, iscoroutinefunction, sync_to_async
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured, MiddlewareNotUsed

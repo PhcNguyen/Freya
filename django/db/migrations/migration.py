@@ -7,24 +7,6 @@ from .exceptions import IrreversibleError
 
 
 class Migration:
-    """
-    The base class for all migrations.
-
-    Migration files will import this from django.db.migrations.Migration
-    and subclass it as a class called Migration. It will have one or more
-    of the following attributes:
-
-     - operations: A list of Operation instances, probably from
-       django.db.migrations.operations
-     - dependencies: A list of tuples of (app_path, migration_name)
-     - run_before: A list of tuples of (app_path, migration_name)
-     - replaces: A list of migration_names
-
-    Note that all migrations come out of migrations and into the Loader or
-    Graph as instances, having been initialized with their app label and name.
-    """
-
-    # Operations to apply during this migration, in order.
     operations = []
 
     # Other migrations that should be run before this migration.

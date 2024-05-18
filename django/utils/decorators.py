@@ -2,7 +2,7 @@
 
 from functools import partial, update_wrapper, wraps
 
-from asgiref.sync import iscoroutinefunction
+from django.asgiref.sync import iscoroutinefunction
 
 
 class classonlymethod(classmethod):

@@ -2,7 +2,7 @@ import logging
 import sys
 from functools import wraps
 
-from asgiref.sync import iscoroutinefunction, sync_to_async
+from django.asgiref.sync import iscoroutinefunction, sync_to_async
 
 from django.conf import settings
 from django.core import signals

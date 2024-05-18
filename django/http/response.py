@@ -11,7 +11,7 @@ from email.header import Header
 from http.client import responses
 from urllib.parse import urlparse
 
-from asgiref.sync import async_to_sync, sync_to_async
+from django.asgiref.sync import async_to_sync, sync_to_async
 
 from django.conf import settings
 from django.core import signals, signing

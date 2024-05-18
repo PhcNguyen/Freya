@@ -1,6 +1,6 @@
 import logging
 
-from asgiref.sync import iscoroutinefunction, markcoroutinefunction
+from django.asgiref.sync import iscoroutinefunction, markcoroutinefunction
 
 from django.core.exceptions import ImproperlyConfigured
 from django.http import (

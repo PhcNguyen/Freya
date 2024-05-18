@@ -7,7 +7,7 @@ import re
 import sys
 import warnings
 
-from asgiref.local import Local
+from django.asgiref.local import Local
 
 from django.apps import apps
 from django.conf import settings

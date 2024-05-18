@@ -4,7 +4,7 @@ import json
 import warnings
 from importlib import import_module
 
-import sqlparse
+from django import sqlparse
 
 from django.conf import settings
 from django.db import NotSupportedError, transaction

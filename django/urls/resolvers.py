@@ -1,11 +1,3 @@
-"""
-This module converts requested URLs to callback view functions.
-
-URLResolver is the main class here. Its resolve() method takes a URL (as
-a string) and returns a ResolverMatch object which provides access to all
-attributes of the resolved URL match.
-"""
-
 import functools
 import inspect
 import re
@@ -14,7 +6,7 @@ from importlib import import_module
 from pickle import PicklingError
 from urllib.parse import quote
 
-from asgiref.local import Local
+from django.asgiref.local import Local
 
 from django.conf import settings
 from django.core.checks import Error, Warning

@@ -4,7 +4,7 @@ import warnings
 from functools import partialmethod
 from itertools import chain
 
-from asgiref.sync import sync_to_async
+from django.asgiref.sync import sync_to_async
 
 import django
 from django.apps import apps

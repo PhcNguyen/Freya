@@ -7,7 +7,7 @@ import operator
 import warnings
 from itertools import chain, islice
 
-from asgiref.sync import sync_to_async
+from django.asgiref.sync import sync_to_async
 
 import django
 from django.conf import settings

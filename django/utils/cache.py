@@ -1,20 +1,3 @@
-"""
-This module contains helper functions for controlling caching. It does so by
-managing the "Vary" header of responses. It includes functions to patch the
-header of response objects directly and decorators that change functions to do
-that header-patching themselves.
-
-For information on the Vary header, see RFC 9110 Section 12.5.5.
-
-Essentially, the "Vary" HTTP header defines which headers a cache should take
-into account when building its cache key. Requests with the same path but
-different header content for headers named in "Vary" need to get different
-cache keys to prevent delivery of wrong content.
-
-An example: i18n middleware would need to distinguish caches by the
-"Accept-language" header.
-"""
-
 import time
 from collections import defaultdict
 from hashlib import md5

@@ -5,7 +5,7 @@ import tempfile
 import traceback
 from contextlib import aclosing
 
-from asgiref.sync import ThreadSensitiveContext, sync_to_async
+from django.asgiref.sync import ThreadSensitiveContext, sync_to_async
 
 from django.conf import settings
 from django.core import signals

@@ -1,7 +1,7 @@
 from urllib.parse import urlparse
 from urllib.request import url2pathname
 
-from asgiref.sync import sync_to_async
+from django.asgiref.sync import sync_to_async
 
 from django.conf import settings
 from django.contrib.staticfiles import utils

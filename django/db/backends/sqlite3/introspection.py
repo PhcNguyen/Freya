@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-import sqlparse
+from django import sqlparse
 
 from django.db import DatabaseError
 from django.db.backends.base.introspection import BaseDatabaseIntrospection

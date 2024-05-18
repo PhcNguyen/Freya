@@ -1,7 +1,7 @@
 import inspect
 import re
 
-from asgiref.sync import sync_to_async
+from django.asgiref.sync import sync_to_async
 
 from django.apps import apps as django_apps
 from django.conf import settings

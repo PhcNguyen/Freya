@@ -3,7 +3,7 @@ import itertools
 import warnings
 from collections import defaultdict
 
-from asgiref.sync import sync_to_async
+from django.asgiref.sync import sync_to_async
 
 from django.contrib.contenttypes.models import ContentType
 from django.core import checks

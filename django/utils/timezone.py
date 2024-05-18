@@ -7,7 +7,7 @@ import zoneinfo
 from contextlib import ContextDecorator
 from datetime import datetime, timedelta, timezone, tzinfo
 
-from asgiref.local import Local
+from django.asgiref.local import Local
 
 from django.conf import settings
 

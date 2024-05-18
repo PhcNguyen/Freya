@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from asgiref.local import Local
+from django.asgiref.local import Local
 
 from django.apps import apps
 from django.utils.autoreload import is_django_module

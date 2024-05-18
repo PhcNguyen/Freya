@@ -1,6 +1,6 @@
 from functools import wraps
 
-from asgiref.sync import iscoroutinefunction
+from django.asgiref.sync import iscoroutinefunction
 
 
 def no_append_slash(view_func):
