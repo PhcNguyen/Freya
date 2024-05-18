@@ -37,14 +37,21 @@ class Terminal:
         sys.exit()
 
     @staticmethod
-    def Console(title: str, msg: str, color: str) -> bool:
+    def Console(title: str, color: str, message: str) -> bool:
+        white = Col.White
+        subject = (
+            f'{white}[{Col.Orange}' +
+            '{}' + 
+            f'{white}]' + 
+            ' --> '
+        )
         try:
-            msg = str(msg)
+            msg = str(message)
             colors = getattr(Col, color)
-            lines = f'{Col.White}[{Col.Orange}{title}{Col.White}] --> '
-            print(f"{lines}{colors}{msg}{Col.White}")
+            print(f"{subject.format(title)}{colors}{msg}{white}")
             return True
         except Exception as error:
+            print(f"{subject.format('Terminal')}{colors}{error}{white}")
             return False
     
     @staticmethod
