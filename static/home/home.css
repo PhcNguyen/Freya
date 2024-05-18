@@ -57,7 +57,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.85)), url('/static/base/image/service.jpeg');
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.85));
   background-size: cover;
   background-position: center;
 }
@@ -285,7 +285,6 @@ span{
     font-size: 12px;
   }
 }
-/* =====================SMALL DEVICES===== */
 
 @media screen and (max-width: 600px) {
 

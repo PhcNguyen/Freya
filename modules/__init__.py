@@ -1,3 +1,3 @@
-from .setting import (
-    IP_LOCAL
+from .utils import (
+    local_ip
 )

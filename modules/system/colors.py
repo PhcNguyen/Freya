@@ -1,7 +1,16 @@
+
+
+
+# Colors.update_color('Red', '255;100;100')
+
 class Colors:
     @staticmethod
     def start(color: str) -> str:
         return f"\033[38;2;{color}m"
+    
+    @classmethod
+    def update_color(cls, color_name: str, new_color: str):
+        setattr(cls, color_name, cls.start.__func__(new_color))
     
     Red = start.__func__('255;0;0')
     Blue = start.__func__('28;121;255')

@@ -19,11 +19,6 @@ def contact(request) -> Any:
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            return redirect('success/')
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
-
-
-def success(request) -> Any:
-    return render(request, 'success.html')

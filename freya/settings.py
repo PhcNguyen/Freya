@@ -57,6 +57,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'database' / 'db.sqlite3',
+        'DATABASE': BASE_DIR / 'database',
     }
 }
 
@@ -89,6 +90,10 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
+]
+
+IMAGES_DIR = [
+    os.path.join(DATABASES['default']['DATABASE'], 'images')
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

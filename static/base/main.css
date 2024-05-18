@@ -1,5 +1,5 @@
 @font-face {
-  font-family: jots_light;
+  font-family: saveur_sans;
   src: url(/static/assets/fonts/Saveur_sans.otf);
 }
 
@@ -167,15 +167,17 @@ section {
   margin: 0;
   padding: 80px 0;
   list-style: none;
+  text-decoration: none;
   background-color: #fff;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
 }
 .menu__item {
+  white-space: pre-line;
   display: block;
   padding: 12px 24px;
   color: #333;
-  font-family: jots_light, sans-serif;
+  font-family: 'jots_light', sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
@@ -183,4 +185,75 @@ section {
 }
 .menu__item:hover {
   background-color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  .navbar {
+      height: 60px;
+      padding: 0 20px;
+  }
+  .navbar ul li a {
+      padding: 0 8px;
+      font-size: 0.7em;
+  }
+  .menu__btn {
+      top: 4%;
+      left: 20px;
+      width: 20px;
+      height: 20px;
+  }
+  .menu__box {
+      width: 250px;
+      padding: 60px 0;
+  }
+  .menu__item {
+      font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+      height: 70px;
+      padding: 0 30px;
+  }
+  .navbar ul li a {
+      padding: 0 10px;
+      font-size: 0.9em;
+  }
+  .menu__btn {
+      top: 5%;
+      left: 30px;
+      width: 24px;
+      height: 24px;
+  }
+  .menu__box {
+      width: 280px;
+      padding: 70px 0;
+  }
+  .menu__item {
+      font-size: 19px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .navbar {
+    padding: 0 40px;
+    height: 80px;
+}
+.navbar ul li a {
+    padding: 0 15px;
+    font-size: 1em;
+}
+.menu__btn {
+    top: 5%;
+    left: 35px;
+    width: 30px;
+    height: 30px;
+}
+.menu__box {
+    width: 280px;
+    padding: 80px 0;
+}
+.menu__item {
+    font-size: 22px;
+}
 }

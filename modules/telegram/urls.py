@@ -1,0 +1,1 @@
+TELE_BASE = "https://api.telegram.org/bot{}/"
