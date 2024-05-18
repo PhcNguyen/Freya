@@ -1,6 +1,7 @@
 import os.path
 from sys import exit, path
 path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import time
 import requests
