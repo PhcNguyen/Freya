@@ -1,15 +1,14 @@
 import os
 import shutil
-from pathlib import Path
-
-from .colors import Colors as Col
 
 
+white = "\033[38;2;255;255;255m"
+yellow = "\033[38;2;255;255;0m"
 FRAMES = [
-    f"\r {Col.White}[{Col.Yellow}{' ' * i}-->{' ' * (5 - i)}{Col.White}]"
+    f"\r {white}[{yellow}{' ' * i}-->{' ' * (5 - i)}{white}]"
     for i in range(6)
 ] + [
-    f"\r {Col.White}[{Col.Yellow}{' ' * i}<--{' ' * (5 - i)}{Col.White}]"
+    f"\r {white}[{yellow}{' ' * i}<--{' ' * (5 - i)}{white}]"
     for i in range(5, -1, -1)
 ]
 

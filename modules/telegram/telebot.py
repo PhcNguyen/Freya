@@ -1,12 +1,12 @@
 import requests
 import time
-from .urls import TELE_BASE
+from .urls import TELEBASE
 
 
 
 class Telegram:
     def __init__(self, token):
-        self.base = TELE_BASE.format(token)
+        self.base = TELEBASE.format(token)
         self.handlers = []
 
     def sendMessage(self, chat_id, text):

@@ -1,1 +1,1 @@
-TELE_BASE = "https://api.telegram.org/bot{}/"
+TELEBASE = "https://api.telegram.org/bot{}/"
