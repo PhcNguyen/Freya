@@ -1,5 +1,5 @@
 from .utils import (
-    local_ip
+    localIP
 )
 from .system.terminal import Terminal
 from .telegram.telebot import Telegram

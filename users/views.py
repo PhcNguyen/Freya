@@ -1,14 +1,13 @@
 from typing import Any
 from django.shortcuts import (
     render,
-    redirect,
 )
 from .forms import ContactForm
 
 
 
 def home(request) -> Any:
-    return render(request, 'home.html')
+    return render(request, 'users/home.html')
 
 
 def contact(request) -> Any:
@@ -21,4 +20,4 @@ def contact(request) -> Any:
             message = form.cleaned_data['message']
     else:
         form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'users/contact.html', {'form': form})
