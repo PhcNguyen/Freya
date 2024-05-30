@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-from modules import Telegram, Terminal
+from modules.core import Terminal
 
 
 def main():

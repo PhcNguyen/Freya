@@ -37,7 +37,7 @@ ROOT_URLCONF = 'freya.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -58,7 +58,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'database' / 'db.sqlite3',
-        'DATABASE': BASE_DIR / 'database',
     }
 }
 
@@ -86,12 +85,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = '/static/'
 
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL= '/media/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

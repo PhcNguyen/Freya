@@ -1,6 +1,6 @@
 import os
 import subprocess
-from modules import localIP
+from modules.core.utils import localIP
 
 PORT = 8000
 
