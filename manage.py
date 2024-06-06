@@ -3,7 +3,7 @@ import os
 import sys
 
 from modules import ui
-from modules.core import Terminal, System, Github
+from modules.core import Terminal, System
 
 try:
     from django.core.management import execute_from_command_line
