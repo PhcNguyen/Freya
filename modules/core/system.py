@@ -80,7 +80,7 @@ class System:
         try:
             with socket.socket() as dns:
                 dns.connect(("8.8.4.4", 80))
-                return dns.getsockname()
+                return dns.getsockname()[0]
         except Exception as error:
             raise error
 
