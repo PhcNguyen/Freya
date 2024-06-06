@@ -1,42 +1,42 @@
-import os.path
-import shutil
+
 from typing import Union
 
 
-WHI = "\033[38;2;255;255;255m"
-YEL = "\033[38;2;255;255;0m"
+class Colors:
+    @staticmethod
+    def start(color: str) -> str:
+        return f"\033[38;2;{color}m"
+    
+    @classmethod
+    def update_color(cls, color_name: str, new_color: str):
+        setattr(cls, color_name, cls.start.__func__(new_color))
+    
+    Red    = start.__func__('255;0;0')
+    Blue   = start.__func__('28;121;255')
+    Cyan   = start.__func__('0;255;255')
+    Pink   = start.__func__('255,192,203')
+    Black  = start.__func__('0;0;0')
+    White  = start.__func__('255;255;255')
+    Green  = start.__func__('0;255;0')
+    Purple = start.__func__('255;0;255')
+    Yellow = start.__func__('255;255;0')
+    Orange = start.__func__('255;165;0')
+
+
 FRAMES = [
-    f"\r {WHI}[{YEL}{' ' * i}-->{' ' * (5 - i)}{WHI}]" for i in range(6)
-    ] + [
-    f"\r {WHI}[{YEL}{' ' * i}<--{' ' * (5 - i)}{WHI}]" for i in range(5, -1, -1)
+    f"\r {Colors.White}[{Colors.Yellow}{' ' * i}-->{' ' * (5 - i)}{Colors.White}]"
+    for i in range(6)
+] + [
+    f"\r {Colors.White}[{Colors.Yellow}{' ' * i}<--{' ' * (5 - i)}{Colors.White}]"
+    for i in range(5, -1, -1)
 ]
 
-
-def removePycache(directory) -> None:
-    """
-    from pathlib import Path
-    remove_pycache(Path.cwd())
-    """
-    for root, dirs, files in os.walk(directory):
-        for dir_name in dirs:
-            if dir_name == "__pycache__":
-                pycache_dir = os.path.join(root, dir_name)
-                shutil.rmtree(pycache_dir)
-        for file_name in files:
-            if file_name.endswith(".pyc") or file_name.endswith(".pyo"):
-                pyc_file = os.path.join(root, file_name)
-                os.remove(pyc_file)
-
-
-def localIP() -> Union[str, dict]:
-    try:
-        from socket import (
-            socket,
-            AF_INET,
-            SOCK_DGRAM
-        )
-        with socket(AF_INET, SOCK_DGRAM) as dns:
-            dns.connect(("8.8.8.8", 80))
-        return dns.getsockname()[0]
-    except Exception as error:
-        return {'error': error}
+MESSAGE: str = ( Colors.White
+    + " ["
+    + Colors.Green
+    + "{}"
+    + Colors.White
+    + "] --> "
+    + "{}{}" 
+    + Colors.White
+)
