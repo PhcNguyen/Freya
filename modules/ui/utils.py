@@ -1,6 +1,5 @@
 import json
 from modules.settings import UI
-from modules.core.utils import Colors as Col
 from os import name as _name, system as _system, get_terminal_size as _terminal_size
 
 
