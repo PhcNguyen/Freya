@@ -53,7 +53,7 @@ class Telegram:
             return None
         return response.json()
 
-    def Updates(self, updates: dict):
+    def updates(self, updates: dict):
         for update in updates.get("result", []):
             if "message" in update:
                 chat_id = update["message"]["chat"]["id"]
@@ -63,11 +63,11 @@ class Telegram:
                     if response_text:
                         self.sendMessage(chat_id, response_text)
 
-    def Poll(self):
+    def poll(self):
         while True:
             updates = self.getUpdates()
             if updates and updates.get("ok"):
                 if updates["result"]:
-                    self.Updates(updates)
+                    self.updates(updates)
                     self.offset = updates["result"][-1]["update_id"] + 1
             time.sleep(1)
