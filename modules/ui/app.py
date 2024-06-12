@@ -1,13 +1,12 @@
-from modules.ui.utils import Colors, ui
-
-
+from modules.ui.utils import ui
+from modules.core.color import Colors, MakeColors
 
 
 def home() -> None:
-    color = Colors.dynamicMIX([Colors.White, Colors.Purple])
+    color = MakeColors.dynamic_mix([Colors.white, Colors.purple])
     ui(color, 'home')
 
 
 def menu() -> None:
-    color = Colors.dynamicMIX([Colors.White, Colors.Orange])
+    color = MakeColors.dynamic_mix([Colors.white, Colors.orange])
     ui(color, 'menu')

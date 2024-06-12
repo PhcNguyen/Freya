@@ -1,18 +1,19 @@
 import json
 
 from modules.settings import UI
-from modules.core.utils import Colors
+from modules.core.color import MakeColors
 
 
 def ui(
-    colors: str, 
+    colors: list,
     banner_key: str, 
 ) -> None:
     with open(UI, 'r', encoding='utf-8') as file:
         banners = json.load(file)
+    banners = MakeColors.add_padding("\n".join(banners[banner_key]))
     print(
-        Colors.diagonal(
+        MakeColors.diagonal_text(
             colors, 
-            Colors.xcenter(Colors.add("\n".join(banners[banner_key])))
+            MakeColors.center_text_horizontally(banners)
         )
     )
