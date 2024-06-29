@@ -1,4 +1,17 @@
-from modules.core.color import Colors
+import os.path
+
+from modules.core.style import Colors
+from pathlib import Path
+
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DEBUG = False
+
+
+VERSION: str = open(
+    os.path.join(BASE_DIR, '.version')
+).read().strip()
 
 
 FRAMES: list[str] = [
@@ -9,4 +22,8 @@ FRAMES: list[str] = [
     for i in range(5, -1, -1)
 ]
 
+
+# * Message *
 MESSAGE: str = f"{Colors.white}[{Colors.green}{{}}{Colors.white}] --> {{}}{{}}{Colors.white}"
+
+ERROR_MESSAGE: str = "Đã có lỗi không mong muốn xảy ra."

@@ -3,7 +3,9 @@ import os
 import sys
 
 from modules.core import System
-from modules.settings import ERROR_MESSAGE
+from modules.core.utils import ERROR_MESSAGE
+
+
 
 try:
     from django.core.management import execute_from_command_line
@@ -27,6 +29,7 @@ def main():
     except Exception as error:
         System.console("SERVER", "Red", str(error))
         System.exit()
+
 
 
 if __name__ == '__main__':

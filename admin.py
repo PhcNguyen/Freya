@@ -3,7 +3,9 @@ import os
 import sys
 
 from modules.core import System
-from modules.settings import ERROR_MESSAGE
+from modules.core.utils import ERROR_MESSAGE
+
+
 
 if __name__ == '__main__':
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "freya.settings")

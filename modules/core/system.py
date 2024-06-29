@@ -6,10 +6,10 @@ import subprocess
 
 from socket import socket
 from typing import NoReturn, Union, Any
-from modules.settings import VERSION
-from modules.core.color import Colors
-from modules.core.utils import FRAMES, MESSAGE
+from modules.core.style import Colors
+from modules.core.utils import FRAMES, MESSAGE, VERSION
 from requests.exceptions import RequestException
+
 
 
 class System:
@@ -84,6 +84,7 @@ class System:
             return error
 
 
+
 class Github:
     start = time.time()
 
@@ -135,6 +136,7 @@ class Github:
             Github.command(command[0], command[1])
 
         Github.end()
+
 
 
 class Telegram:
