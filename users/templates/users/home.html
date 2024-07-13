@@ -5,9 +5,9 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'users/home/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/home/css/main.css' %}">
 <section class="videobg" id="video1">
-    <video src="{% static 'users/home/video.mp4' %}" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
+    <video src="{% static 'users/home/images/video.mp4' %}" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
     <h2>Freya Phan Deep Time</h2>
     <button>Discover the Collections</button>
 </section>
@@ -17,7 +17,7 @@
     <div class="grid">
         <div class="grid-item">
             <div class="card">
-                <img class="card-image" src="{% static 'users/home/service.jpeg' %}" alt="service img 1">
+                <img class="card-image" src="{% static 'users/home/images/service.jpeg' %}" alt="service img 1">
                 <div class="card-content">
                     <h1>How can we help you?</h1>
                     <p>Wherever you are, Freya Phan Client Advisors will be delighted to assist you.</p>
@@ -28,7 +28,7 @@
 
         <div class="grid-item">
             <div class="card">
-                <img class="card-image" src="{% static 'users/home/service2.jpeg' %}" alt="service img 2">
+                <img class="card-image" src="{% static 'users/home/images/service2.jpeg' %}" alt="service img 2">
                 <div class="card-content">
                     <h1>Art of Gifting</h1>
                     <p>Choose the perfect gift from our specially curated selection of products.</p>
@@ -39,7 +39,7 @@
         </div>
         <div class="grid-item">
             <div class="card">
-                <img class="card-image" src="{% static 'users/home/service2.jpeg' %}" alt="service img 3">
+                <img class="card-image" src="{% static 'users/home/images/service2.jpeg' %}" alt="service img 3">
                 <div class="card-content">
                     <h1>Personalization</h1>
                     <p>Freya Phan's personalization offer spans a wide range of services.</p>
@@ -87,12 +87,10 @@
         <hr class="hr-hid">
         <button class="accordion">Help</button>
             <div class="panel">
-
                 <a href="#">You can <span>call</span> or <span>email us</span>.</a>
                 <a href="#">FAQ's</a>
                 <a href="#">Product Care</a>
                 <a href="#">Stores</a>
-
             </div>
         
         <hr class="hr-hid">
