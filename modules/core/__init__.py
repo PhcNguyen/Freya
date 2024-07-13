@@ -3,5 +3,5 @@ from modules.core.style import (
     Add, Colorate, 
     Banner
 )
-from modules.core.system import System, Github, Telegram
+from modules.core.system import System, Github
 from modules.core.utils import VERSION

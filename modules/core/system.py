@@ -4,7 +4,7 @@ import os.path
 import requests
 import subprocess
 
-from socket import socket
+from socket import socket, AF_INET, SOCK_DGRAM
 from typing import NoReturn, Union, Any
 from modules.core.style import Colors
 from modules.core.utils import FRAMES, MESSAGE, VERSION
@@ -13,71 +13,58 @@ from requests.exceptions import RequestException
 
 
 class System:
+    """
+    6 functions: 
+    - clear()   |   Clears the terminal screen
+    - command() |   Executes a system command
+    - reset()   |   Resets the Python script by re-executing it
+    - exit()    |   Exits the Python script
+    - console() |   Prints a formatted message to the console
+    - sleep()   |   Shows a countdown with a specified number of frames
+    """
     Windows = os.name == 'nt'
 
     @staticmethod
+    def init() -> int:
+        os.system('')
+
+    @staticmethod
     def clear() -> int:
-        """
-        clear() | Clears the terminal screen.
-        """
         return os.system(
             "cls" if System.Windows else "clear"
         )
-
+        
     @staticmethod
     def command(command: str) -> int:
-        """
-        command() | Executes a system command.
-        """
         return os.system(command)
 
     @staticmethod
     def reset() -> NoReturn:
-        """
-        reset() | Resets the Python script by re-executing it.
-        """
         return os.execv(
             sys.executable, ['python'] + sys.argv
         )
 
     @staticmethod
     def exit() -> NoReturn:
-        """
-        exit() | Exits the Python script.
-        """
         sys.exit()
 
     @staticmethod
     def console(name: str, color: str, message: str) -> None:
-        """
-        Console() | Prints a formatted message to the console.
-        """
-        print(
-            MESSAGE.format(
-                name,
-                getattr(Colors, color.lower()),
-                str(message)
-            )
-        )
+        print(MESSAGE.format(name, getattr(Colors, color.lower()), str(message)))
 
     @staticmethod
     def sleep(times: int) -> None:
-        """
-        Sleep() | Shows a countdown with a specified number of frames.
-        """
         for i in range(times, 0, -1):
             for frame in FRAMES:
-                sys.stdout.write(
-                    f'{frame}[{Colors.orange}{i:02}{Colors.white}]'
-                )
+                sys.stdout.write(f'{frame}[{Colors.Orange}{i:02}{Colors.White}]')
                 sys.stdout.flush()
                 time.sleep(0.125)
-        sys.stdout.write('\r')
+        sys.stdout.write('\r')   
 
     @staticmethod
     def localIP() -> Exception | Any:
         try:
-            with socket() as dns:
+            with socket(AF_INET, SOCK_DGRAM) as dns:
                 dns.connect(("8.8.4.4", 80))
                 return dns.getsockname()[0]
         except Exception as error:
@@ -136,30 +123,3 @@ class Github:
             Github.command(command[0], command[1])
 
         Github.end()
-
-
-
-class Telegram:
-    def __init__(self, token: str) -> None:
-        self.token = token
-
-    def sendMessage(
-            self,
-            chat_id: str,
-            text: str
-    ) -> Union[dict, None]:
-
-        url = "https://api.telegram.org/bot{}/sendMessage".format(self.token)
-        payload = {
-            'chat_id': chat_id,
-            'text': text
-        }
-        try:
-            response = requests.post(
-                url=url,
-                data=payload
-            )
-            response.raise_for_status()
-        except RequestException:
-            return None
-        return response.json()
