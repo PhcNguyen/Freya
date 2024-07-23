@@ -5,10 +5,9 @@ import requests
 import subprocess
 
 from socket import socket, AF_INET, SOCK_DGRAM
-from typing import NoReturn, Union, Any
+from typing import NoReturn, Any
 from modules.core.style import Colors
 from modules.core.utils import FRAMES, MESSAGE, VERSION
-from requests.exceptions import RequestException
 
 
 

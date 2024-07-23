@@ -1,7 +1,6 @@
 from typing import Any
-from django.shortcuts import (
-    render,
-)
+from django.shortcuts import render
+
 from .forms import ContactForm
 
 
