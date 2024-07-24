@@ -5,12 +5,12 @@ from pathlib import Path
 
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEBUG = False
 
 
 VERSION: str = open(
-    os.path.join(BASE_DIR, '.version')
+    os.path.join(BASE_DIR, '.github', 'VERSION')
 ).read().strip()
 
 

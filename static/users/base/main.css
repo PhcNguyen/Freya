@@ -39,6 +39,10 @@ section {
   overflow: hidden;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .hr {
   border: none;
   border-top: 0.5px solid rgba(128, 128, 128, 0.421);
@@ -145,7 +149,7 @@ section {
 
 .navbar .nav-container a {
   text-decoration: none;
-  color: #0e2431;
+  color: #000000;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
@@ -191,7 +195,7 @@ section {
   height: 4px;
   width: 100%;
   border-radius: 10px;
-  background: #333;
+  background: #000000;
 }
 
 .nav-container .hamburger-lines .line1 {
@@ -209,20 +213,31 @@ section {
 }
 
 .navbar .menu-items {
-  padding-top: 120px;
+  padding-top: 120px; /* Adjusted padding */
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
   height: 100vh;
-  width: 100%;
+  width: 20%; /* Set width to 30% for half screen */
   z-index: 100;
-  transform: translateX(-150%);
+  transform: translateX(-100%); /* Adjusted transform to hide off-screen */
   display: flex;
   flex-direction: column;
-  margin: 10%;
-  padding: 30%;
+  margin: 0; /* Removed margin */
+  padding: 20px; /* Adjusted padding */
   list-style: none;
   transition: transform 0.5s ease-in-out;
-  text-align: center;
+  text-align: left; /* Align text to the left */
   background-color: white;
+  position: fixed; /* Fixed position */
+  top: 90px; /* Adjusted top position to move menu down */
+  left: 0; /* Align to the left */
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0); /* Show menu when checked */
+}
+
+.navbar .menu-items li a:hover {
+  color: #000000; /* Ensure the color stays the same on hover */
 }
 
 .navbar .menu-items li {
