@@ -8,22 +8,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{% static 'users/contact/images/favicon.ico' %}"/>
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'users/contact/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'users/contact/vendor/animate/animate.css' %}">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'users/contact/vendor/css-hamburgers/hamburgers.min.css' %}">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'users/contact/vendor/select2/select2.min.css' %}">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'users/contact/css/util.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'users/contact/css/main.css' %}">
-    <!--===============================================================================================-->
 </head>
 <body>
     <div class="contact1">
@@ -32,42 +24,42 @@
                 <img src="{% static 'users/contact/images/mail.png' %}" alt="IMG">
             </div>
 
-            <form class="contact1-form validate-form">
-				{% csrf_token %}
+            <form class="contact1-form validate-form" method="post">
+                {% csrf_token %}
                 <span class="contact1-form-title">
-                    Contact US
+                    Contact Us
                 </span>
 
                 <div class="wrap-input1 validate-input" data-validate="Name is required">
-					{{ form.name }}
-					{% if form.name.errors %}
-                    	<span class="shadow-input1">{{ form.name.errors }}</span>
-					{% endif %}
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <span class="shadow-input1">{{ form.name.errors }}</span>
+                    {% endif %}
                 </div>
 
                 <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     {{ form.email }}
-					{% if form.email.errors %}
-                    	<span class="shadow-input1">{{ form.email.errors }}</span>
-					{% endif %}
+                    {% if form.email.errors %}
+                        <span class="shadow-input1">{{ form.email.errors }}</span>
+                    {% endif %}
                 </div>
 
                 <div class="wrap-input1 validate-input" data-validate="Subject is required">
                     {{ form.subject }}
-					{% if form.subject.errors %}
-                    	<span class="shadow-input1">{{ form.subject.errors }}</span>
-					{% endif %}
+                    {% if form.subject.errors %}
+                        <span class="shadow-input1">{{ form.subject.errors }}</span>
+                    {% endif %}
                 </div>
 
                 <div class="wrap-input1 validate-input" data-validate="Message is required">
                     {{ form.message }}
-					{% if form.message.errors %}
-                    	<span class="shadow-input1">{{ form.messgae.errors }}</span>
-					{% endif %}
+                    {% if form.message.errors %}
+                        <span class="shadow-input1">{{ form.message.errors }}</span>
+                    {% endif %}
                 </div>
 
                 <div class="container-contact1-form-btn">
-                    <button class="contact1-form-btn">
+                    <button class="contact1-form-btn" type="submit">
                         <span>
                             Send Email
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -77,16 +69,11 @@
             </form>
         </div>
     </div>
-	<!--===============================================================================================-->
-	<script src="{% static 'users/contact/js/main.js' %}"></script>
-    <!--===============================================================================================-->
+    <script src="{% static 'users/contact/js/main.js' %}"></script>
     <script src="{% static 'users/contact/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-    <!--===============================================================================================-->
     <script src="{% static 'users/contact/vendor/bootstrap/js/popper.js' %}"></script>
     <script src="{% static 'users/contact/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-    <!--===============================================================================================-->
     <script src="{% static 'users/contact/vendor/select2/select2.min.js' %}"></script>
-    <!--===============================================================================================-->
     <script src="{% static 'users/contact/vendor/tilt/tilt.jquery.min.js' %}"></script>
     <script>
         $('.js-tilt').tilt({

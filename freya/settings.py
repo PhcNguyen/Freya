@@ -88,6 +88,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+CONTACT_CSV_DIR = os.path.join(BASE_DIR, 'database', 'csv', 'contact.csv')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
