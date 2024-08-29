@@ -2,8 +2,7 @@
 import os
 import sys
 
-from modules.core import System
-from modules.core.utils import ERROR_MESSAGE
+from modules import System
 
 
 
@@ -12,7 +11,7 @@ try:
     from django.core.management.commands.runserver import Command
     System.console('DJANGO', 'Green', 'Django setup successfully.')
 except ImportError:
-    System.console("DJANGO", "Red", ERROR_MESSAGE)
+    System.console("DJANGO", "Red", 'Không thể Import thư viện Django !')
     System.exit()
 
 

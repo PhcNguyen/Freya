@@ -5,6 +5,7 @@ __pycache__/
 
 # VS Code directory
 .vscode/
+env/
 
 # Specific Python file
 github.py
